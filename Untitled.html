@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mama John's Restaurant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff8dc;
+            color: #5a3e1b;
+            margin: 0;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #d2691e;
+            margin-bottom: 10px;
+        }
+        .menu-item {
+            border: 2px solid #d2691e;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px auto;
+            width: 320px;
+            background-color: #fff0d4;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+        .menu-item:hover {
+            transform: scale(1.03);
+            cursor: pointer;
+        }
+        img {
+            width: 250px;
+            border-radius: 8px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 1em;
+            color: #d2691e;
+            text-decoration: none;
+            border: 1px solid #d2691e;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #fff0d4;
+        }
+        .back-link:hover {
+            background-color: #ffd39b;
+            cursor: pointer;
+        }
+        ul {
+            font-size: 1.1em;
+            list-style-type: square;
+            max-width: 400px;
+            margin: auto;
+            text-align: left;
+        }
+        .section {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu Section -->
+    <div id="menu" class="section active">
+        <h1>Welcome to Mama John's Restaurant!</h1>
+        <p>Serving fresh, delicious meals every day. Try our top dishes:</p>
+
+        <div class="menu-item" onclick="showSection('shawarma')">
+            <h2>Shawarma</h2>
+            <img src="shawarma.jpg" alt="Shawarma">
+        </div>
+
+        <div class="menu-item" onclick="showSection('pasta')">
+            <h2>White Sauce Pasta</h2>
+            <img src="whitesaucepasta.jfif" alt="White Sauce Pasta">
+        </div>
+
+        <div class="menu-item" onclick="showSection('soup')">
+            <h2>Soup</h2>
+            <img src="soup.jfif" alt="Soup">
+        </div>
+
+        <footer>
+            &copy; 2025 Mama John's Restaurant. All rights reserved.
+        </footer>
+    </div>
+
+    <!-- Shawarma Ingredients Section -->
+    <div id="shawarma" class="section">
+        <span class="back-link" onclick="showSection('menu')">← Back to Menu</span>
+        <h1>Shawarma Ingredients</h1>
+        <ul>
+            <li>Chicken breast (thinly sliced)</li>
+            <li>Yogurt</li>
+            <li>Garlic</li>
+            <li>Lemon juice</li>
+            <li>Olive oil</li>
+            <li>Shawarma spice mix (cumin, paprika, turmeric, cinnamon)</li>
+            <li>Salt & pepper</li>
+            <li>Pita bread</li>
+            <li>Fresh vegetables (tomatoes, cucumbers, lettuce)</li>
+            <li>Tahini sauce or garlic sauce</li>
+        </ul>
+    </div>
+
+    <!-- Pasta Ingredients Section -->
+    <div id="pasta" class="section">
+        <span class="back-link" onclick="showSection('menu')">← Back to Menu</span>
+        <h1>White Sauce Pasta Ingredients</h1>
+        <ul>
+            <li>Pasta (penne or fettuccine)</li>
+            <li>Butter</li>
+            <li>Garlic</li>
+            <li>All-purpose flour</li>
+            <li>Milk</li>
+            <li>Heavy cream</li>
+            <li>Parmesan cheese</li>
+            <li>Salt & pepper</li>
+            <li>Oregano</li>
+        </ul>
+    </div>
+
+    <!-- Soup Ingredients Section -->
+    <div id="soup" class="section">
+        <span class="back-link" onclick="showSection('menu')">← Back to Menu</span>
+        <h1>Soup Ingredients</h1>
+        <ul>
+            <li>Chicken broth</li>
+            <li>Carrots</li>
+            <li>Celery</li>
+            <li>Onions</li>
+            <li>Garlic</li>
+            <li>Salt & pepper</li>
+            <li>Herbs (parsley, thyme)</li>
+        </ul>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
